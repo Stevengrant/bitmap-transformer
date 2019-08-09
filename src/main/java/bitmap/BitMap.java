@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class BitMap {
     BufferedImage image;
 
-    private BufferedImage getBmpImage(String targetFilePath)   {
+    public BufferedImage getBmpImage(String targetFilePath)   {
     BufferedImage img = null;
     try {
         img = ImageIO.read(new File(targetFilePath));
@@ -20,24 +20,22 @@ public class BitMap {
     return img;
     }
 
-    private int[] getDementions(BufferedImage image){
+    public int[] getDementions(BufferedImage image){
         int[]res = new int[2];
         res[0] = image.getHeight();
         res[1] = image.getWidth();
         return res;
     }
-    private BufferedImage changeColorMultiplication(BufferedImage image, int height, int width, int mutator){
+    public BufferedImage changeColorMultiplication(BufferedImage image, int height, int width, int mutator){
     for(int y = 0; y< height; y++){
         for(int x = 0; x < width; x++){
             int pixel = image.getRGB(x,y);
             image.setRGB(x,y,pixel * mutator);
-            System.out.println("In Change color");
-            System.out.println(pixel);
         }
     }
     return image;
     }
-    private void saveImage(BufferedImage image, String path)  {
+    public void saveImage(BufferedImage image, String path)  {
 //        BufferedWriter writer = new BufferedWriter(new FileWriter(path));
 //        writer.write(image);
 
@@ -48,12 +46,11 @@ public class BitMap {
         }
 
     }
-    public void invertColor(String path){
-        BufferedImage img =getBmpImage(path);
+    public void invertColor(String inPath, String outPath){
+        BufferedImage img =getBmpImage(inPath);
         int[] dimentions = getDementions(img);
         img = changeColorMultiplication(img,dimentions[0],dimentions[1], -1);
-        saveImage(img, path);
-        //save image
+        saveImage(img, outPath);
 
 
     }

@@ -28,10 +28,14 @@ public class App {
 
 
     public static void main(String[] args) {
+        String inPath = args[0];
+        String outPath = args[1];
+        String transform = args[2];
+        System.out.println(inPath + outPath + transform);
         BitMap map = new BitMap();
 //        BufferedImage image  = map.getBmpImage("/Users/stegrnt/cf/401/bitmap/src/main/resources/coffee.bmp");
 //        int[] imageDementions = map.getDementions(image);
-        map.invertColor("/Users/stegrnt/cf/401/bitmap/src/main/resources/coffee.bmp");
+        map.invertColor(inPath, outPath);
 
 
     }
