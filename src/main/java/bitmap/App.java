@@ -3,6 +3,8 @@
  */
 package bitmap;
 
+import java.awt.image.BufferedImage;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -18,7 +20,7 @@ public class App {
 
 //    The CLI should be architected using best modularization practices.
 //    The CLI should contain a Bitmap class, and reading in a file should create a new Bitmap instance.
-//    The CLI should require at least three arguments: input-file-path output-file-path transfrom-name.
+//    The CLI should require at least three arguments: input-file-path, output-file-path, transfrom-name.
 //    The CLI should support a minimum of three transforms, each of which is an instance method in the Bitmap class.
 //    The CLI should log useful Error messages if used incorrectly.
 //    The CLI should log a success message on completion.
@@ -26,6 +28,11 @@ public class App {
 
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        BitMap map = new BitMap();
+//        BufferedImage image  = map.getBmpImage("/Users/stegrnt/cf/401/bitmap/src/main/resources/coffee.bmp");
+//        int[] imageDementions = map.getDementions(image);
+        map.invertColor("/Users/stegrnt/cf/401/bitmap/src/main/resources/coffee.bmp");
+
+
     }
 }
