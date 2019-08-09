@@ -14,6 +14,17 @@ public class App {
     //and then write it out to a new file.
     //This project will require manipulating binary data
     //Your solution should be composed of small tested methods that solve specific problems
+
+
+//    The CLI should be architected using best modularization practices.
+//    The CLI should contain a Bitmap class, and reading in a file should create a new Bitmap instance.
+//    The CLI should require at least three arguments: input-file-path output-file-path transfrom-name.
+//    The CLI should support a minimum of three transforms, each of which is an instance method in the Bitmap class.
+//    The CLI should log useful Error messages if used incorrectly.
+//    The CLI should log a success message on completion.
+
+
+
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
     }
